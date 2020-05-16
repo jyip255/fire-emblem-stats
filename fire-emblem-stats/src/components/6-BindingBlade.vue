@@ -1,11 +1,6 @@
 <template>
     <div class = "6">
         <h1> {{msg}} </h1>
-        <h1> Skeleton </h1>
-        <ul class="nav">
-            <router-link to="/6-BindingBlade/Roy">Roy</router-link>
-            <router-link to="/6-BindingBlade/Fir">Fir</router-link>
-        </ul>
         <router-view></router-view>
         <b-dropdown id="dropdown" text="Choose a unit" class="m-2">
             <b-dropdown-item @click="changeTo(Roy, 'Roy')">Roy</b-dropdown-item>
@@ -23,7 +18,7 @@ export default {
         return {
             msg: 'Homepage for Fire Emblem 6: The Binding Blade',
             target: {
-                title: 'No',
+                title: 'No Unit Selected',
                 info: ''
             },
             Roy: 
