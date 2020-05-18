@@ -20,7 +20,8 @@
             <b-dropdown-item @click="changeTo(Clarine, 'Clarine')">Clarine</b-dropdown-item>
             <b-dropdown-item @click="changeTo(Rutger, 'Rutger')">Rutger</b-dropdown-item>
             <b-dropdown-item @click="changeTo(RutgerH, 'RutgerH')">Rutger (Hard)</b-dropdown-item>
-
+        </b-dropdown>
+        <b-dropdown id="dropdown" text="Choose a unit" class="m-2">
             <b-dropdown-item @click="changeTo(Fir, 'Fir')">Fir</b-dropdown-item>
             <b-dropdown-item @click="changeTo(Miredy, 'Miredy')">Miredy</b-dropdown-item>
         </b-dropdown>
@@ -73,247 +74,116 @@ export default {
             target2: [],
             Roy: {
                 name: 'Roy',
-                base: [
-                    1, 18, 5, 5, 7, 7, 5, 0
-                ],
-                growths: [
-                    1, .80, .40, .50, .40, .6, .25, .30
-                ],
-                stats: [
-                ]
-            },
+                class: 'Lord',
+                base: [1, 18, 5, 5, 7, 7, 5, 0],
+                growths: [1, .80, .40, .50, .40, .60, .25, .30]},
             Marcus: {
                 name: 'Marcus',
-                base: [
-                    21, 32, 9, 14, 11, 10, 9, 8
-                ],
-                growths: [
-                    1, .60, .25, .20, .25, .20, .15, .20
-                ],
-                stats: [
-                ]
-            },
+                class: 'Paladin',
+                base: [21, 32, 9, 14, 11, 10, 9, 8],
+                growths: [1, .60, .25, .20, .25, .20, .15, .20]},
             Allen: {
                 name: 'Allen',
-                base: [
-                    1, 21, 7, 4, 6, 3, 6, 0
-                ],
-                growths: [
-                    1, .85, .45, .40, .45, .40, .25, .10
-                ],
-                stats: [
-                ]
-            },
+                class: 'Cavalier',
+                base: [1, 21, 7, 4, 6, 3, 6, 0],
+                growths: [1, .85, .45, .40, .45, .40, .25, .10]},
             Lance: {
                 name: 'Lance',
-                base: [
-                    1, 20, 5, 6, 8, 2, 6, 0
-                ],
-                growths: [
-                    1, .80, .40, .45, .50, .35, .20, .15
-                ],
-                stats: [
-                ]
-            },
+                class: 'Cavalier',
+                base: [1, 20, 5, 6, 8, 2, 6, 0],
+                growths: [1, .80, .40, .45, .50, .35, .20, .15]},
             Wolt: {
                 name: 'Wolt',
-                base: [
-                    1, 18, 4, 4, 5, 2, 4, 0
-                ],
-                growths: [
-                    1, .80, .40, .50, .40, .40, .20, .10
-                ],
-                stats: [
-                ]
-            },
+                class: 'ArcherM',
+                base: [1, 18, 4, 4, 5, 2, 4, 0],
+                growths: [1, .80, .40, .50, .40, .40, .20, .10]},
             Bors: {
                 name: 'Bors',
-                base: [
-                    1, 20, 7, 4, 3, 4, 11, 0
-                ],
-                growths: [
-                    1, .90, .30, .30, .40, .50, .35, .10
-                ],
-                stats: [
-                ]
-            },
+                class: 'KnightM',
+                base: [1, 20, 7, 4, 3, 4, 11, 0],
+                growths: [1, .90, .30, .30, .40, .50, .35, .10]},
             Merlinus: {
                 name: 'Merlinus',
-                base: [
-                    1, 15, 0, 3, 3, 10, 3, 0
-                ],
-                growths: [
-                    1, 1, 0, .50, .50, 1, .20, .05
-                ],
-                stats: [
-                ]
-            },
+                class: 'Transporter',
+                base: [1, 15, 0, 3, 3, 10, 3, 0],
+                growths: [1, 1, 0, .50, .50, 1, .20, .05]},
             Ellen: {
                 name: 'Ellen',
-                base: [
-                    2, 16, 1, 6, 8, 8, 0, 6
-                ],
-                growths: [
-                    1, .45, .50, .30, .20, .70, .05, .60
-                ],
-                stats: [
-                ]
-            },
+                class: 'Priest',
+                base: [2, 16, 1, 6, 8, 8, 0, 6],
+                growths: [1, .45, .50, .30, .20, .70, .05, .60]},
             Dieck: {
                 name: 'Dieck',
-                base: [
-                    5, 26, 9, 12, 10, 5, 6, 1
-                ],
-                growths: [
-                    1, .90, .40, .40, .30, .35, .20, .15
-                ],
-                stats: [
-                ]
-            },
+                class: 'Mercenary',
+                base: [5, 26, 9, 12, 10, 5, 6, 1],
+                growths: [1, .90, .40, .40, .30, .35, .20, .15]},
             Wade: {
                 name: 'Wade',
-                base: [
-                    2, 28, 8, 3, 5, 4, 3, 10
-                ],
-                growths: [
-                    1, .75, .50, .45, .20, .45, .30, .05
-                ],
-                stats: [
-                ]
-            },
+                class: 'Fighter',
+                base: [2, 28, 8, 3, 5, 4, 3, 10],
+                growths: [1, .75, .50, .45, .20, .45, .30, .05]},
             Lott: {
                 name: 'Lott',
-                base: [
-                    3, 29, 7, 6, 7, 2, 4, 1
-                ],
-                growths: [
-                    1, .80, .30, .30, .35, .30, .40, .15
-                ],
-                stats: [
-                ]
-            },
+                class: 'Fighter',
+                base: [3, 29, 7, 6, 7, 2, 4, 1],
+                growths: [1, .80, .30, .30, .35, .30, .40, .15]},
             Thany: {
                 name: 'Thany',
-                base: [
-                    1, 17, 4, 6, 12, 5, 6, 5
-                ],
-                growths: [
-                    1, .45, .30, .55, .60, .60, .10, .25
-                ],
-                stats: [
-                ]
-            },
+                class: 'Pegasus Knight',
+                base: [1, 17, 4, 6, 12, 5, 6, 5],
+                growths: [1, .45, .30, .55, .60, .60, .10, .25]},
             Chad: {
                 name: 'Chad',
-                base: [
-                    1, 16, 3, 3, 10, 4, 2, 0
-                ],
-                growths: [
-                    1, .85, .50, .50, .80, .60, .25, .15
-                ],
-                stats: [
-                ]
-            },
+                class: 'Thief',
+                base: [1, 16, 3, 3, 10, 4, 2, 0],
+                growths: [1, .85, .50, .50, .80, .60, .25, .15]},
             Lugh: {
                 name: 'Lugh',
-                base: [
-                    1, 16, 4, 5, 6, 5, 3, 5
-                ],
-                growths: [
-                    1, .50, .40, .50, .50, .35, .15, .30
-                ],
-                stats: [
-                ]
-            },
+                class: 'MageM',
+                base: [1, 16, 4, 5, 6, 5, 3, 5],
+                growths: [1, .50, .40, .50, .50, .35, .15, .30]},
             Clarine: {
                 name: 'Clarine',
-                base: [
-                    1, 15, 2, 5, 9, 8, 2, 5
-                ],
-                growths: [
-                    1, .40, .30, .40, .50, .65, .10, .40
-                ],
-                stats: [
-                ]
-            },
+                class: 'Troubadour',
+                base: [1, 15, 2, 5, 9, 8, 2, 5],
+                growths: [1, .40, .30, .40, .50, .65, .10, .40]},
             Rutger: {
                 name: 'Rutger',
-                base: [
-                    4, 22, 7, 12, 13, 2, 5, 0
-                ],
-                growths: [
-                    1, .80, .30, .60, .50, .30, .20, .20
-                ],
-                stats: [
-                ]
-            },
+                class: 'MyrmidonM',
+                base: [4, 22, 7, 12, 13, 2, 5, 0],
+                growths: [1, .80, .30, .60, .50, .30, .20, .20]},
             RutgerH: {
                 name: 'RutgerH',
-                base: [
-                    4, 26, 9, 14, 15, 4, 6, 1
-                ],
-                growths: [
-                    1, .80, .30, .60, .50, .30, .20, .20
-                ],
-                stats: [
-                ]
-            },
+                class: 'MyrmidonM',
+                base: [4, 26, 9, 14, 15, 4, 6, 1],
+                growths: [1, .80, .30, .60, .50, .30, .20, .20]},
             Saul: {
                 name: 'Saul',
-                base: [
-                    5, 20, 4, 6, 10, 2, 2, 5
-                ],
-                growths: [
-                    1, .60, .40, .45, .45, .35, .15, .15
-                ],
-                stats: [
-                ]
-            },
+                class: 'Priest',
+                base: [5, 20, 4, 6, 10, 2, 2, 5],
+                growths: [1, .60, .40, .45, .45, .35, .15, .15]},
             Dorothy: {
                 name: 'Dorothy',
-                base: [
-                    3, 19, 5, 6, 6, 3, 4, 2
-                ],
-                growths: [
-                    1, .85, .50, .45, .45, .35, .15, .15
-                ],
-                stats: [
-                ]
-            },
+                class: 'ArcherF',
+                base: [3, 19, 5, 6, 6, 3, 4, 2],
+                growths: [1, .85, .50, .45, .45, .35, .15, .15],
+                stats: []},
             Sue: {
                 name: 'Sue',
-                base: [
-                    1, 18, 5, 7, 8, 4, 5, 0
-                ],
-                growths: [
-                    1, .55, .30, .55, .65, .50, .10, .15
-                ],
-                stats: [
-                ]
-            },
+                class: 'NomadF',
+                base: [1, 18, 5, 7, 8, 4, 5, 0],
+                growths: [1, .55, .30, .55, .65, .50, .10, .15]},
             Fir: {
                 name: 'Fir',
-                base: [
-                    1, 19, 6, 9, 10, 3, 3, 1
-                ],
-                growths: [
-                    1, .75, .25, .50, .55, .50, .15, .20
-                ],
-                stats: [
-                ]
-            },
+                class: 'MyrmidonF',
+                base: [1, 19, 6, 9, 10, 3, 3, 1],
+                growths: [1, .75, .25, .50, .55, .50, .15, .20]},
             Miredy: {
                 name: 'Miredy',
-                base: [
-                    10, 30, 12, 11, 10, 5, 13, 3
-                ],
-                growths: [
-                    1, .75, .50, .50, .45, .25, .20, .05
-                ],
-                promotion: [
-                    1, 5, 2, 2, 2, 0, 2, 2
-                ]
-            }
+                class: 'Wyvern RiderF',
+                base: [10, 30, 12, 11, 10, 5, 13, 3],
+                growths: [1, .75, .50, .50, .45, .25, .20, .05],
+                promotion: [1, 5, 2, 2, 2, 0, 2, 2]}
         }
     },
     methods: {
