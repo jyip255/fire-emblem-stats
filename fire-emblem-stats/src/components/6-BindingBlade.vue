@@ -25,7 +25,7 @@
             <b-dropdown-item @click="changeTo(Fir, 'Fir')">Fir</b-dropdown-item>
             <b-dropdown-item @click="changeTo(Miredy, 'Miredy')">Miredy</b-dropdown-item>
         </b-dropdown>
-        <h2> {{ target.title }} </h2>
+        <h2> {{ target.unit }} ({{target.class}})</h2>
         <b-container>
             <b-row>
                 <b-col>Level</b-col>
@@ -37,7 +37,7 @@
                 <b-col>Def</b-col>
                 <b-col>Res</b-col>
             </b-row>
-            <div v-for="(entry, index) in target2" v-bind:key="index">
+            <div v-for="(entry, index) in target.info" v-bind:key="index">
             <b-row>
                 <b-col> {{entry.level}} </b-col>
                 <b-col> {{entry.hp}} </b-col>
@@ -60,18 +60,10 @@ export default {
         return {
             msg: 'Homepage for Fire Emblem 6: The Binding Blade',
             target: {
-                title: 'No Unit Selected',
-                info: '',
-                level: '',
-                hp: '',
-                str: '',
-                skl: '',
-                spd: '',
-                lck: '',
-                def: '',
-                res: ''
+                unit: 'No Unit Selected',
+                class: '',
+                info: [],
             },
-            target2: [],
             Roy: {
                 name: 'Roy',
                 class: 'Lord',
@@ -191,11 +183,11 @@ export default {
             window.history.length > 1 ? this.$router.go(-1) : this.$router.push('/')
         },
         calculateStats: function(unit) {
-            this.target2 = [];
+            this.target.info = [];
             var i;
             var cap = 41 - unit.base[0]
             for (i = 0; i < cap; i++) {
-                this.target2.push({
+                this.target.info.push({
                     level: ((unit.base[0] + (unit.growths[0] * i))),
                     hp: Math.round(((unit.base[1] + (unit.growths[1] * i)))*100)/100,
                     str: Math.round(((unit.base[2] + (unit.growths[2] * i)))*100)/100,
@@ -205,11 +197,12 @@ export default {
                     def: Math.round(((unit.base[6] + (unit.growths[6] * i)))*100)/100,
                     res: Math.round(((unit.base[7] + (unit.growths[7] * i)))*100)/100
                 })
-                }
+            }
         },
         changeTo(e, name) {
             this.target.info = e
-            this.target.title = name
+            this.target.unit = name
+            this.target.class = e.class
             this.calculateStats(e)
         },
     },
