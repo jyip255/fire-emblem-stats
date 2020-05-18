@@ -1,18 +1,21 @@
 <template>
   <div id="app">
-    <img alt="Fire Emblem logo" src="./assets/felogo.png">
-    <h1> App page testing </h1>
+    <global-navbar></global-navbar>
+    <h1> Fire Emblem unit statistics app </h1>
     <router-view/>
   </div>
 </template>
 
 <script>
+import Nav from './components/Navigation.vue'
 //import HelloWorld from './components/HelloWorld.vue'
 //import Calculator from './components/Calculator.vue'
 
 export default {
   name: 'App',
   components: {
+    'global-navbar': Nav,
+    //'calc': Calculator
   }
 }
 </script>

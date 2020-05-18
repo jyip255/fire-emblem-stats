@@ -84,7 +84,8 @@ export default {
                 growths: [
                     1, .75, .50, .50, .45, .25, .20, .05
                 ],
-                stats: [
+                promotion: [
+                    1, 5, 2, 2, 2, 0, 2, 2
                 ]
             }
         }
@@ -107,8 +108,8 @@ export default {
                     lck: Math.round(((unit.base[5] + (unit.growths[5] * i)))*100)/100,
                     def: Math.round(((unit.base[6] + (unit.growths[6] * i)))*100)/100,
                     res: Math.round(((unit.base[7] + (unit.growths[7] * i)))*100)/100
-            })
-            }
+                })
+                }
         },
         changeTo(e, name) {
             this.target.info = e
