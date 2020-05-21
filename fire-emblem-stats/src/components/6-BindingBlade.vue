@@ -77,7 +77,7 @@
             <b-dropdown-item @click="changeTo(Zeis, 'Zeis')">Zeis</b-dropdown-item>
             <b-dropdown-item @click="changeTo(ZeisH, 'ZeisH')">Zeis (Hard)</b-dropdown-item>
         </b-dropdown>
-
+        <b-form-input v-model="number" placeholder="Enter your unit HP"></b-form-input>
         <h2> {{ target.unit }} ({{target.class}})</h2>
         <b-container>
             <b-row>
@@ -116,6 +116,16 @@ export default {
                 unit: 'No Unit Selected',
                 class: '',
                 info: [],
+            },
+            tempUnit: {
+                lvl: 0,
+                hp: 0,
+                str: 0,
+                skl: 0,
+                spd: 0,
+                lck: 0,
+                def: 0,
+                res: 0
             },
             Roy: {
                 name: 'Roy',
